@@ -623,7 +623,7 @@
       <link name="base_link">
         <buoyancy>
           <compensation>1.01</compensation>
-          <origin xyz= "0.16 0.2 -0.125"/>
+          <origin xyz= "0 0.16 0"/>
         </buoyancy>
       </link>
     </plugin>
