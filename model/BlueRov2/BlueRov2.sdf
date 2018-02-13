@@ -6,12 +6,12 @@
       <inertial>
         <mass>11</mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx>0.16</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy>0.16</iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz>0.16</izz>
         </inertia>
       </inertial>
       <visual name='base_link_visual'>
@@ -42,12 +42,12 @@
       <inertial>
         <mass>1e-10</mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx>0.16</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy>0.16</iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz>0.16</izz>
         </inertia>
       </inertial>
     </link>
@@ -74,12 +74,12 @@
       <inertial>
         <mass>1e-10</mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx>0.16</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy>0.16</iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz>0.16</izz>
         </inertia>
       </inertial>
     </link>
@@ -106,12 +106,12 @@
       <inertial>
         <mass>1e-10</mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx>0.16</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy>0.16</iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz>0.16</izz>
         </inertia>
       </inertial>
     </link>
@@ -138,12 +138,12 @@
       <inertial>
         <mass>1e-10</mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx>0.16</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy>0.16</iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz>0.16</izz>
         </inertia>
       </inertial>
     </link>
@@ -170,12 +170,12 @@
       <inertial>
         <mass>1e-10</mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx>0.16</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy>0.16</iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz>0.16</izz>
         </inertia>
       </inertial>
     </link>
@@ -202,12 +202,12 @@
       <inertial>
         <mass>1e-10</mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx>0.16</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy>0.16</iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz>0.16</izz>
         </inertia>
       </inertial>
     </link>
@@ -537,7 +537,7 @@
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
           <jointName>BlueRov2::thruster1_joint</jointName>
-          <multiplier>102</multiplier>
+          <multiplier>200</multiplier>
         </control>
 
         <control channel="1">
@@ -551,7 +551,7 @@
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
           <jointName>BlueRov2::thruster2_joint</jointName>
-          <multiplier>102</multiplier>
+          <multiplier>200</multiplier>
         </control>
 
         <control channel="2">
@@ -565,7 +565,7 @@
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
           <jointName>BlueRov2::thruster3_joint</jointName>
-          <multiplier>102</multiplier>
+          <multiplier>200</multiplier>
         </control>
 
         <control channel="3">
@@ -579,7 +579,7 @@
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
           <jointName>BlueRov2::thruster4_joint</jointName>
-          <multiplier>102</multiplier>
+          <multiplier>200</multiplier>
         </control>
 
 
@@ -594,7 +594,7 @@
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
           <jointName>BlueRov2::thruster5_joint</jointName>
-          <multiplier>102</multiplier>
+          <multiplier>200</multiplier>
 
         </control>
 
@@ -609,7 +609,7 @@
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
           <jointName>BlueRov2::thruster6_joint</jointName>
-          <multiplier>102</multiplier>
+          <multiplier>200</multiplier>
         </control>
     </plugin>
 
@@ -622,8 +622,20 @@
 
       <link name="base_link">
         <buoyancy>
-          <compensation>1.01</compensation>
-          <origin xyz= "0 0.16 0"/>
+          <compensation>0.2525</compensation>
+          <origin xyz= "0.1 0.16 0.16"/>
+        </buoyancy>
+        <buoyancy>
+          <compensation>0.2525</compensation>
+          <origin xyz= "-0.1 0.16 0.16"/>
+        </buoyancy>
+        <buoyancy>
+          <compensation>0.2525</compensation>
+          <origin xyz= "-0.1 0.16 -0.16"/>
+        </buoyancy>
+        <buoyancy>
+          <compensation>0.2525</compensation>
+          <origin xyz= "0.1 0.16 -0.16"/>
         </buoyancy>
       </link>
     </plugin>
