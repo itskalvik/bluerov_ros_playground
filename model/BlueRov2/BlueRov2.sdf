@@ -17,8 +17,8 @@
       <visual name='base_link_visual'>
         <geometry>
           <mesh>
-            <scale>0.1 0.1 0.1</scale>
-            <uri>model://BlueRov2/meshes/BlueRov2.stl</uri>
+            <scale>1 1 1</scale>
+            <uri>model://BlueRov2/meshes/BlueRov2.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -30,15 +30,15 @@
     </link>
 
     <link name='thruster1'>
-      <pose>0.12 -0.11 0 1.5707963 1.5707963 -0.78539815</pose>
-      <!--visual name="cil">
-          <geometry>
-            <cylinder>
-              <radius>.03</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-      </visual-->
+      <pose>0.064 0.102 0.014 -3.142 -0.838 -3.142</pose>
+      <visual name="cil">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://BlueRov2/meshes/T200_Prop_CCW.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
       <inertial>
         <mass>1e-10</mass>
         <inertia>
@@ -51,21 +51,26 @@
         </inertia>
       </inertial>
     </link>
-    <joint name='thruster1_joint' type='fixed'>
+    <joint name='thruster1_joint' type='revolute'>
       <parent>base_link</parent>
       <child>thruster1</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
     </joint>
 
     <link name='thruster2'>
-      <pose>0.12 0.11 0 1.5707963 1.5707963 3.92699075</pose>
-      <!--visual name="cil1">
+      <pose>0.255 0.102 0.014 -3.142 0.838 -3.142</pose>
+      <visual name="cil">
         <geometry>
-          <cylinder>
-            <radius>.03</radius>
-            <length>1</length>
-          </cylinder>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://BlueRov2/meshes/T200_Prop_CCW.dae</uri>
+          </mesh>
         </geometry>
-      </visual-->
+      </visual>
       <inertial>
         <mass>1e-10</mass>
         <inertia>
@@ -78,25 +83,26 @@
         </inertia>
       </inertial>
     </link>
-    <joint name='thruster2_joint' type='fixed'>
+    <joint name='thruster2_joint' type='revolute'>
       <parent>base_link</parent>
       <child>thruster2</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
 
     <link name='thruster3'>
-      <pose>-0.12 -0.11 0 1.5707963 1.5707963 0.78540075</pose>
-      <!--visual name="cil2">
-          <geometry>
-            <cylinder>
-              <radius>.03</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-      </visual-->
+      <pose>0.066 0.102 -0.28 0 -0.838 0</pose>
+      <visual name="cil">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://BlueRov2/meshes/T200_Prop_CW.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
       <inertial>
         <mass>1e-10</mass>
         <inertia>
@@ -109,25 +115,26 @@
         </inertia>
       </inertial>
     </link>
-    <joint name='thruster3_joint' type='fixed'>
+    <joint name='thruster3_joint' type='revolute'>
       <parent>base_link</parent>
       <child>thruster3</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
 
     <link name='thruster4'>
-      <pose>-0.12 0.11 0 1.5707963 1.5707963 2.35619445</pose>
-      <!--visual name="cil3">
-          <geometry>
-            <cylinder>
-              <radius>.03</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-      </visual-->
+      <pose>0.253 0.102 -0.28 0 0.838 0</pose>
+      <visual name="cil">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://BlueRov2/meshes/T200_Prop_CW.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
       <inertial>
         <mass>1e-10</mass>
         <inertia>
@@ -140,25 +147,26 @@
         </inertia>
       </inertial>
     </link>
-    <joint name='thruster4_joint' type='fixed'>
+    <joint name='thruster4_joint' type='revolute'>
       <parent>base_link</parent>
       <child>thruster4</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
       <axis>
-        <xyz>0 0 -1</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
 
     <link name='thruster5'>
-      <pose>0 -0.11 0 3.1415926 0 0</pose>
-      <!--visual name="cil4">
-          <geometry>
-            <cylinder>
-              <radius>.03</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-      </visual-->
+      <pose>0.049 0.179 -0.125 0 -1.571 1.571</pose>
+      <visual name="cil">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://BlueRov2/meshes/T200_Prop_CCW.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
       <inertial>
         <mass>1e-10</mass>
         <inertia>
@@ -171,25 +179,26 @@
         </inertia>
       </inertial>
     </link>
-    <joint name='thruster5_joint' type='fixed'>
+    <joint name='thruster5_joint' type='revolute'>
       <parent>base_link</parent>
       <child>thruster5</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
       <axis>
-        <xyz>0 -1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
 
     <link name='thruster6'>
-      <pose>0 0.11 0 3.1415926 0 0</pose>
-      <!--visual name="cil5">
-          <geometry>
-            <cylinder>
-              <radius>.03</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-      </visual-->
+      <pose>0.27 0.179 -0.125 0 1.571 -1.571</pose>
+      <visual name="cil">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://BlueRov2/meshes/T200_Prop_CW.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
       <inertial>
         <mass>1e-10</mass>
         <inertia>
@@ -202,14 +211,304 @@
         </inertia>
       </inertial>
     </link>
-    <joint name='thruster6_joint' type='fixed'>
+    <joint name='thruster6_joint' type='revolute'>
       <parent>base_link</parent>
       <child>thruster6</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
       <axis>
-        <xyz>0 1 0</xyz>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
+
+    <plugin name='prop1_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.015 0.024 0.005</cp>
+      <forward>0.04 0.021 -0.023</forward>
+      <upward>-0.019 -0.017 -0.034</upward>
+      <link_name>thruster1</link_name>
+    </plugin>
+
+    <plugin name='prop1_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013 -0.025 0.005</cp>
+      <forward>-0.038 0.023 -0.023</forward>
+      <upward>0.024 -0.008 -0.034</upward>
+      <link_name>thruster1</link_name>
+    </plugin>
+
+    <plugin name='prop1_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.028 0.001 0.005</cp>
+      <forward>-0.001 -0.045 -0.023</forward>
+      <upward>-0.005 0.025 -0.034</upward>
+      <link_name>thruster1</link_name>
+    </plugin>
+
+    <plugin name='prop2_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.015 0.024 0.005</cp>
+      <forward>0.04 0.021 -0.023</forward>
+      <upward>-0.019 -0.017 -0.034</upward>
+      <link_name>thruster2</link_name>
+    </plugin>
+
+    <plugin name='prop2_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013 -0.025 0.005</cp>
+      <forward>-0.038 0.023 -0.023</forward>
+      <upward>0.024 -0.008 -0.034</upward>
+      <link_name>thruster2</link_name>
+    </plugin>
+
+    <plugin name='prop2_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.028 0.001 0.005</cp>
+      <forward>-0.001 -0.045 -0.023</forward>
+      <upward>-0.005 0.025 -0.034</upward>
+      <link_name>thruster2</link_name>
+    </plugin>
+
+    <plugin name='prop3_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013001 0.024612 0.0054</cp>
+      <forward>-0.17746 -0.10243 -0.0575</forward>
+      <upward>0.07209 0.02292 -0.10235</upward>
+      <link_name>thruster3</link_name>
+    </plugin>
+
+    <plugin name='prop3_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.027815 -0.001047 0.0054</cp>
+      <forward>0.00002 0.2049 -0.0575</forward>
+      <upward>-0.01619 -0.07389 -0.10235</upward>
+      <link_name>thruster3</link_name>
+    </plugin>
+
+    <plugin name='prop3_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.014814 -0.023565 0.0054</cp>
+      <forward>0.17744 -0.10247 -0.05749</forward>
+      <upward>-0.0559 0.05097 -0.10235</upward>
+      <link_name>thruster3</link_name>
+    </plugin>
+
+    <plugin name='prop4_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013001 0.024612 0.0054</cp>
+      <forward>-0.17746 -0.10243 -0.0575</forward>
+      <upward>0.07209 0.02292 -0.10235</upward>
+      <link_name>thruster4</link_name>
+    </plugin>
+
+    <plugin name='prop4_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.027815 -0.001047 0.0054</cp>
+      <forward>0.00002 0.2049 -0.0575</forward>
+      <upward>-0.01619 -0.07389 -0.10235</upward>
+      <link_name>thruster4</link_name>
+    </plugin>
+
+    <plugin name='prop4_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.014814 -0.023565 0.0054</cp>
+      <forward>0.17744 -0.10247 -0.05749</forward>
+      <upward>-0.0559 0.05097 -0.10235</upward>
+      <link_name>thruster4</link_name>
+    </plugin>
+
+    <plugin name='prop5_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.015 0.024 0.005</cp>
+      <forward>0.04 0.021 -0.023</forward>
+      <upward>-0.019 -0.017 -0.034</upward>
+      <link_name>thruster5</link_name>
+    </plugin>
+
+    <plugin name='prop5_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013 -0.025 0.005</cp>
+      <forward>-0.038 0.023 -0.023</forward>
+      <upward>0.024 -0.008 -0.034</upward>
+      <link_name>thruster5</link_name>
+    </plugin>
+
+    <plugin name='prop5_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.028 0.001 0.005</cp>
+      <forward>-0.001 -0.045 -0.023</forward>
+      <upward>-0.005 0.025 -0.034</upward>
+      <link_name>thruster5</link_name>
+    </plugin>
+
+    <plugin name='prop6_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013001 0.024612 0.0054</cp>
+      <forward>-0.17746 -0.10243 -0.0575</forward>
+      <upward>0.07209 0.02292 -0.10235</upward>
+      <link_name>thruster6</link_name>
+    </plugin>
+
+    <plugin name='prop6_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.027815 -0.001047 0.0054</cp>
+      <forward>0.00002 0.2049 -0.0575</forward>
+      <upward>-0.01619 -0.07389 -0.10235</upward>
+      <link_name>thruster6</link_name>
+    </plugin>
+
+    <plugin name='prop6_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.014814 -0.023565 0.0054</cp>
+      <forward>0.17744 -0.10247 -0.05749</forward>
+      <upward>-0.0559 0.05097 -0.10235</upward>
+      <link_name>thruster6</link_name>
+    </plugin>
+
 
     <allow_auto_disable>1</allow_auto_disable>
 
@@ -228,7 +527,7 @@
         Negative thrust = -41
       -->
         <control channel="0">
-          <type>EFFORT</type>
+          <type>VELOCITY</type>
           <offset>-0.5</offset>
           <p_gain>1</p_gain>
           <i_gain>0</i_gain>
@@ -237,12 +536,12 @@
           <i_min>0</i_min>
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
-          <linkName>BlueRov2::thruster1</linkName>
+          <jointName>BlueRov2::thruster1_joint</jointName>
           <multiplier>102</multiplier>
         </control>
 
         <control channel="1">
-          <type>EFFORT</type>
+          <type>VELOCITY</type>
           <offset>-0.5</offset>
           <p_gain>1</p_gain>
           <i_gain>0</i_gain>
@@ -251,12 +550,12 @@
           <i_min>0</i_min>
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
-          <linkName>BlueRov2::thruster2</linkName>
+          <jointName>BlueRov2::thruster2_joint</jointName>
           <multiplier>102</multiplier>
         </control>
 
         <control channel="2">
-          <type>EFFORT</type>
+          <type>VELOCITY</type>
           <offset>-0.5</offset>
           <p_gain>1</p_gain>
           <i_gain>0</i_gain>
@@ -265,12 +564,12 @@
           <i_min>0</i_min>
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
-          <linkName>BlueRov2::thruster3</linkName>
+          <jointName>BlueRov2::thruster3_joint</jointName>
           <multiplier>102</multiplier>
         </control>
 
         <control channel="3">
-          <type>EFFORT</type>
+          <type>VELOCITY</type>
           <offset>-0.5</offset>
           <p_gain>1</p_gain>
           <i_gain>0</i_gain>
@@ -279,13 +578,13 @@
           <i_min>0</i_min>
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
-          <linkName>BlueRov2::thruster4</linkName>
+          <jointName>BlueRov2::thruster4_joint</jointName>
           <multiplier>102</multiplier>
         </control>
 
 
         <control channel="4">
-          <type>EFFORT</type>
+          <type>VELOCITY</type>
           <offset>-0.5</offset>
           <p_gain>1</p_gain>
           <i_gain>0</i_gain>
@@ -294,13 +593,13 @@
           <i_min>0</i_min>
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
-          <linkName>BlueRov2::thruster5</linkName>
+          <jointName>BlueRov2::thruster5_joint</jointName>
           <multiplier>102</multiplier>
 
         </control>
 
         <control channel="5">
-          <type>EFFORT</type>
+          <type>VELOCITY</type>
           <offset>-0.5</offset>
           <p_gain>1</p_gain>
           <i_gain>0</i_gain>
@@ -309,12 +608,11 @@
           <i_min>0</i_min>
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
-          <linkName>BlueRov2::thruster6</linkName>
+          <jointName>BlueRov2::thruster6_joint</jointName>
           <multiplier>102</multiplier>
         </control>
     </plugin>
 
-    <!-- buoyancy plugin -->
     <plugin name="freebuoyancy_gazebo" filename="libfreebuoyancy_gazebo.so">
       <descriptionParam>robot_description</descriptionParam>
       <fluidTopic>current</fluidTopic>
@@ -324,20 +622,8 @@
 
       <link name="base_link">
         <buoyancy>
-          <compensation>0.2525</compensation>
-          <origin xyz= "0.12585 0.111 0.1789"/>
-        </buoyancy>
-        <buoyancy>
-          <compensation>0.2525</compensation>
-          <origin xyz= "-0.12585 0.111 0.1789"/>
-        </buoyancy>
-        <buoyancy>
-          <compensation>0.2525</compensation>
-          <origin xyz= "-0.12585 -0.111 0.1789"/>
-        </buoyancy>
-        <buoyancy>
-          <compensation>0.2525</compensation>
-          <origin xyz= "0.12585 -0.111 0.1789"/>
+          <compensation>1.01</compensation>
+          <origin xyz= "0.16 0.2 -0.125"/>
         </buoyancy>
       </link>
     </plugin>
