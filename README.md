@@ -11,7 +11,6 @@ Bluerov2 Gazebo simulation.
         ```bash
         git clone https://github.com/kdkalvik/bluerov_ros_playground/
         cd bluerov_ros_playground/
-        git checkout vel_sitl
         ```
  
     2. Run Gazebo model
