@@ -2,7 +2,8 @@
 Bluerov2 Gazebo simulation.
 
 # Setup
-1.Install [freebuoyancy_gazebo](https://github.com/bluerobotics/freebuoyancy_gazebo#install)
+
+1. Install [freebuoyancy_gazebo](https://github.com/bluerobotics/freebuoyancy_gazebo#install)
     plugin for buoyancy simulation.
     
 2. Install [ardupilot_gazebo/add_link](https://github.com/patrickelectric/ardupilot_gazebo/tree/add_link#usage-)
