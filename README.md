@@ -9,13 +9,13 @@ Bluerov2 Gazebo simulation.
     plugin for ardupilot-gazebo communication. *add_link* is a branch that provides actuation over sdf links, after the `git clone`, it's necessary to run `git checkout add_link`.
     
 3. Run BlueRov2 Gazebo model without ROS and MAVROS
-    a. Download bluerov_ros_playground
+    1. Download bluerov_ros_playground
         ```bashz
         git clone https://github.com/kdkalvik/bluerov_ros_playground/
         cd bluerov_ros_playground/
         ```
  
-    b. Run Gazebo model
+    2. Run Gazebo model
         ```bash
         cd bluerov_ros_playground
         source gazebo.sh
@@ -24,11 +24,11 @@ Bluerov2 Gazebo simulation.
         ```
         
 3. Run BlueRov2 Gazebo model with ROS and MAVROS
-    a. Make sure you have ROS kinetic installed and then install mavros 
+    1. Make sure you have ROS kinetic installed and then install mavros 
         ```bash
         sudo apt-get install ros-kinetic-mavros*
         ```
-    b. Download bluerov_ros_playground
+    2. Download bluerov_ros_playground
         ```bash
         cd catkin_ws/src
         git clone https://github.com/kdkalvik/bluerov_ros_playground/
@@ -36,7 +36,7 @@ Bluerov2 Gazebo simulation.
         catkin_make
         ```
  
-    c. Run Gazebo model
+    3. Run Gazebo model
         ```bash
         cd catin_ws/src/bluerov_ros_playground
         source gazebo.sh
