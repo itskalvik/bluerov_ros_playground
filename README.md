@@ -2,13 +2,13 @@
 Bluerov2 Gazebo simulation.
 
 # Setup
-1. Install [freebuoyancy_gazebo](https://github.com/bluerobotics/freebuoyancy_gazebo#install)
+1.Install [freebuoyancy_gazebo](https://github.com/bluerobotics/freebuoyancy_gazebo#install)
     plugin for buoyancy simulation.
     
 2. Install [ardupilot_gazebo/add_link](https://github.com/patrickelectric/ardupilot_gazebo/tree/add_link#usage-)
     plugin for ardupilot-gazebo communication. *add_link* is a branch that provides actuation over sdf links, after the `git clone`, it's necessary to run `git checkout add_link`.
     
-3a. Run BlueRov2 Gazebo model without ROS and MAVROS
+3. Run BlueRov2 Gazebo model without ROS and MAVROS
     1. Download bluerov_ros_playground
         ```bashz
         git clone https://github.com/kdkalvik/bluerov_ros_playground/
@@ -23,7 +23,7 @@ Bluerov2 Gazebo simulation.
         # Start the simulation
         ```
         
-3b. Run BlueRov2 Gazebo model with ROS and MAVROS
+3. Run BlueRov2 Gazebo model with ROS and MAVROS
     1. Make sure you have ROS kinetic installed and then install mavros 
         ```bash
         sudo apt-get install ros-kinetic-mavros*
