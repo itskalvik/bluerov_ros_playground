@@ -3,6 +3,7 @@
   <model name='BlueRov2'>
     <pose>0 0 0 0 0 0</pose>
     <link name='base_link'>
+    
       <inertial>
         <mass>11</mass>
         <inertia>
@@ -14,6 +15,7 @@
           <izz>0.16</izz>
         </inertia>
       </inertial>
+
       <visual name='base_link_visual'>
         <geometry>
           <mesh>
@@ -22,8 +24,9 @@
           </mesh>
         </geometry>
       </visual>
+
       <sensor name="imu_sensor" type="imu">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 1.5708 0 0</pose>
         <always_on>1</always_on>
         <update_rate>1000.0</update_rate>
       </sensor>
@@ -120,7 +123,7 @@
       <child>thruster3</child>
       <pose frame=''>0 0 0 0 0 0</pose>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0 0 -1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
@@ -152,7 +155,7 @@
       <child>thruster4</child>
       <pose frame=''>0 0 0 0 0 0</pose>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0 0 -1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
@@ -216,7 +219,7 @@
       <child>thruster6</child>
       <pose frame=''>0 0 0 0 0 0</pose>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0 0 -1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
@@ -537,7 +540,7 @@
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
           <jointName>BlueRov2::thruster1_joint</jointName>
-          <multiplier>200</multiplier>
+          <multiplier>400</multiplier>
         </control>
 
         <control channel="1">
@@ -551,7 +554,7 @@
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
           <jointName>BlueRov2::thruster2_joint</jointName>
-          <multiplier>200</multiplier>
+          <multiplier>400</multiplier>
         </control>
 
         <control channel="2">
@@ -565,7 +568,7 @@
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
           <jointName>BlueRov2::thruster3_joint</jointName>
-          <multiplier>200</multiplier>
+          <multiplier>400</multiplier>
         </control>
 
         <control channel="3">
@@ -579,7 +582,7 @@
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
           <jointName>BlueRov2::thruster4_joint</jointName>
-          <multiplier>200</multiplier>
+          <multiplier>400</multiplier>
         </control>
 
 
@@ -594,7 +597,7 @@
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
           <jointName>BlueRov2::thruster5_joint</jointName>
-          <multiplier>200</multiplier>
+          <multiplier>400</multiplier>
 
         </control>
 
@@ -609,7 +612,7 @@
           <cmd_max>51</cmd_max>
           <cmd_min>-40</cmd_min>
           <jointName>BlueRov2::thruster6_joint</jointName>
-          <multiplier>200</multiplier>
+          <multiplier>400</multiplier>
         </control>
     </plugin>
 
