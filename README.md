@@ -7,7 +7,7 @@ Bluerov2 Gazebo simulation.
     plugin for buoyancy simulation.
     
 2. Install [ardupilot_gazebo](https://github.com/khancyr/ardupilot_gazebo)
-    plugin for ardupilot-gazebo communication. *add_link* is a branch that provides actuation over sdf links, after the `git clone`, it's necessary to run `git checkout add_link`.
+    plugin for ardupilot-gazebo communication.
     
 3. Run BlueRov2 Gazebo model without ROS and MAVROS
     1. Download bluerov_ros_playground
