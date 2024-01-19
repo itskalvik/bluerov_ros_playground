@@ -10,6 +10,7 @@
     <arg name="debug" value="false"/>
   </include>
 
+  <!-- start ardupilot gazebo -->
   <include file="$(find bluerov_ros_playground)/launch/apm.launch">
   </include>
 

@@ -1,0 +1,277 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <model name='ASV'>
+    <pose>0 0 0 0 0 0</pose>
+    <link name='base_link'>
+    
+      <inertial>
+        <mass>11</mass>
+        <inertia>
+          <ixx>0.16</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.16</iyy>
+          <iyz>0</iyz>
+          <izz>0.16</izz>
+        </inertia>
+      </inertial>
+
+      <visual name='base_link_visual'>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ASV/meshes/BlueRov2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <sensor name="imu_sensor" type="imu">
+        <pose>0 0 0 1.5708 0 0</pose>
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+      </sensor>
+    </link>
+
+    <link name='thruster1'>
+      <pose>0.049 0.179 -0.125 0 0 0</pose>
+      <visual name="cil">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ASV/meshes/T200_Prop_CCW.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <inertial>
+        <mass>1e-10</mass>
+        <inertia>
+          <ixx>0.16</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.16</iyy>
+          <iyz>0</iyz>
+          <izz>0.16</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='thruster1_joint' type='revolute'>
+      <parent>base_link</parent>
+      <child>thruster1</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='thruster2'>
+      <pose>0.27 0.179 -0.125 0 0 0</pose>
+      <visual name="cil">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ASV/meshes/T200_Prop_CW.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <inertial>
+        <mass>1e-10</mass>
+        <inertia>
+          <ixx>0.16</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.16</iyy>
+          <iyz>0</iyz>
+          <izz>0.16</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='thruster2_joint' type='revolute'>
+      <parent>base_link</parent>
+      <child>thruster2</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <plugin name='prop1_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.015 0.024 0.005</cp>
+      <forward>0.04 0.021 -0.023</forward>
+      <upward>-0.019 -0.017 -0.034</upward>
+      <link_name>thruster1</link_name>
+    </plugin>
+
+    <plugin name='prop1_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013 -0.025 0.005</cp>
+      <forward>-0.038 0.023 -0.023</forward>
+      <upward>0.024 -0.008 -0.034</upward>
+      <link_name>thruster1</link_name>
+    </plugin>
+
+    <plugin name='prop1_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.028 0.001 0.005</cp>
+      <forward>-0.001 -0.045 -0.023</forward>
+      <upward>-0.005 0.025 -0.034</upward>
+      <link_name>thruster1</link_name>
+    </plugin>
+
+    <plugin name='prop2_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013001 0.024612 0.0054</cp>
+      <forward>-0.17746 -0.10243 -0.0575</forward>
+      <upward>0.07209 0.02292 -0.10235</upward>
+      <link_name>thruster2</link_name>
+    </plugin>
+
+    <plugin name='prop2_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.027815 -0.001047 0.0054</cp>
+      <forward>0.00002 0.2049 -0.0575</forward>
+      <upward>-0.01619 -0.07389 -0.10235</upward>
+      <link_name>thruster2</link_name>
+    </plugin>
+
+    <plugin name='prop2_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.014814 -0.023565 0.0054</cp>
+      <forward>0.17744 -0.10247 -0.05749</forward>
+      <upward>-0.0559 0.05097 -0.10235</upward>
+      <link_name>thruster2</link_name>
+    </plugin>
+
+
+    <allow_auto_disable>1</allow_auto_disable>
+
+    <plugin name="ArduPilotPlugin" filename="libArduPilotPlugin.so">
+      <fdm_addr>127.0.0.1</fdm_addr>
+      <fdm_port_in>9002</fdm_port_in>
+      <fdm_port_out>9003</fdm_port_out>
+      
+      <!-- Frame conventions
+        Require by ArduPilot: change model and gazebo from XYZ to XY-Z coordinates
+      -->
+      <modelXYZToAirplaneXForwardZDown>0 0 0 3.141593 0 0</modelXYZToAirplaneXForwardZDown>
+      <gazeboXYZToNED>0 0 0 3.141593 0 1.57079632</gazeboXYZToNED>
+
+      <imuName>ASV::base_link::imu_sensor</imuName>
+      <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
+
+      <!--
+        incoming control command [0, 1]
+        so offset it by -0.5 to get [-0.5, 0.5].
+        multiplier = 102
+        Positive thrust = 51
+        Negative thrust = -41
+      -->
+
+        <control channel="0">
+          <type>VELOCITY</type>
+          <offset>-0.5</offset>
+          <p_gain>1</p_gain>
+          <i_gain>0</i_gain>
+          <d_gain>0</d_gain>
+          <i_max>0</i_max>
+          <i_min>0</i_min>
+          <cmd_max>51</cmd_max>
+          <cmd_min>-40</cmd_min>
+          <jointName>ASV::thruster1_joint</jointName>
+          <multiplier>400</multiplier>
+
+        </control>
+
+        <control channel="1">
+          <type>VELOCITY</type>
+          <offset>-0.5</offset>
+          <p_gain>1</p_gain>
+          <i_gain>0</i_gain>
+          <d_gain>0</d_gain>
+          <i_max>0</i_max>
+          <i_min>0</i_min>
+          <cmd_max>51</cmd_max>
+          <cmd_min>-40</cmd_min>
+          <jointName>ASV::thruster2_joint</jointName>
+          <multiplier>400</multiplier>
+        </control>
+    </plugin>
+
+    <plugin name="freebuoyancy_gazebo" filename="libfreebuoyancy_gazebo.so">
+      <descriptionParam>robot_description</descriptionParam>
+      <fluidTopic>current</fluidTopic>
+      <alwaysOn>true</alwaysOn>
+      <surface>0 0 0</surface>
+      <updateRate>.001</updateRate>
+
+      <link name="base_link">
+        <buoyancy>
+          <compensation>0.2525</compensation>
+          <origin xyz= "0.1 0.16 0.16"/>
+        </buoyancy>
+        <buoyancy>
+          <compensation>0.2525</compensation>
+          <origin xyz= "-0.1 0.16 0.16"/>
+        </buoyancy>
+        <buoyancy>
+          <compensation>0.2525</compensation>
+          <origin xyz= "-0.1 0.16 -0.16"/>
+        </buoyancy>
+        <buoyancy>
+          <compensation>0.2525</compensation>
+          <origin xyz= "0.1 0.16 -0.16"/>
+        </buoyancy>
+      </link>
+    </plugin>
+  </model>
+</sdf>
